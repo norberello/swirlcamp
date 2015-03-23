@@ -1,0 +1,6 @@
+.Rhistory
+.Rproj.user
+.RData
+swirl.Rproj
+*.html
+.DS_Store
