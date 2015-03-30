@@ -24,4 +24,5 @@ do_restart.datacamp <- function(e) {
   if(exists("les", e, inherits=FALSE)){
     rm("les", envir=e, inherits=FALSE)
   }
+  e$test_from <- 1
 }
