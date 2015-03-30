@@ -19,7 +19,7 @@ do_main.datacamp <- function(e){
 
 #' @export
 do_restart.datacamp <- function(e) { 
-  message("Restarting the lesson for you...")
+  message("\nRestarting the lesson for you...")
   # Remove the current lesson. Progress has been saved already.
   if(exists("les", e, inherits=FALSE)){
     rm("les", envir=e, inherits=FALSE)
