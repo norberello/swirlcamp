@@ -10,7 +10,18 @@
 #' 
 #' @export
 swirl <- function(init_filename = ".init.yaml", install = TRUE) {
-  initialize_options(init_filename)
-  if(install) install_course_from_s3()
-  swirl::swirl("datacamp")
+  if(!file.exists(init_filename)) {
+    message("You can only use the swirl() command at the start of this exercise.")
+  } else {
+    initialize_options(init_filename)
+    if(install) install_course_from_s3()
+    swirl::swirl("datacamp")  
+  }
 }
+
+#' @export
+bye <- function() { message(sprintf(override_msg, "bye")) }
+
+
+#' @export
+info <- function() { message(sprintf(override_msg, "info")) }

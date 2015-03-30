@@ -1,15 +1,12 @@
 #' @importFrom yaml yaml.load_file
-initialize_options <- function(filename = NULL) {
-  if(is.null(filename)) {
-    x <- readline("enter .yaml file: ")
-    filename <- paste0(x, ".yaml")
-  }
+initialize_options <- function(filename) {
   required_properties = c("user_id", "course", "lesson","from")
   properties = yaml.load_file(filename)
   if(!all(names(required_properties) %in% properties)) {
     stop(sprintf("Not all necessary info is available in %s", filename))
   }
   options(properties)
+  file.remove(filename)
 }
 
 #' Install course from S3

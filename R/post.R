@@ -69,12 +69,12 @@ post_result.datacamp <- function(e, passed, feedback, hint) {
   } else {
     submission <- as.character(as.expression(e$expr))
   }
-  
   packet <- list(type = "result", content = list(result = passed, 
                                                  submission = submission, 
                                                  row = e$row,
                                                  next_row = if(passed) e$row + 1 else e$row,
-                                                 feedback = html(feedback)))
+                                                 feedback = html(feedback),
+                                                 skipped = if(exists("skipped", e)) e$skipped else FALSE))
   post(packet)
   if(passed) {
     # wait for user to read the feedback
@@ -94,7 +94,7 @@ post_finished.datacamp <- function(e) {
 #' @importFrom httr POST add_headers
 #' @importFrom RJSONIO toJSON
 post <- function(packet) {
-  # print(paste("posting", packet$type))
+  # print(packet)
   url <- "http://pusher.datacamp.com/exercises"
   json <- RJSONIO::toJSON(c(packet, user_id = getOption("user_id")))
   result <- try(POST(url = url, 
