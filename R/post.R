@@ -5,7 +5,7 @@ post_init.datacamp <- function(e) {
   packet <- list(type = "init",
                  content = list(current_row = e$row,
                                 total_rows = nrow(e$les),
-                                history = as.list(e$les[1:e$row , "Output"])))
+                                history = html_list(as.list(e$les[1:e$row , "Output"]))))
   post(packet)
 }
 

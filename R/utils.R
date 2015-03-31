@@ -5,4 +5,8 @@ html <- function(mes_vec) {
   return(paste(html_vec, collapse = ""))
 }
 
+html_list <- function(mes_list) {
+  lapply(mes_list, function(m) markdownToHTML(text = m, fragment.only = TRUE))
+}
+
 override_msg <- "You can not use swirl's %s() function in the DataCamp interface."
