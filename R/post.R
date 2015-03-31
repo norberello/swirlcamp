@@ -6,7 +6,6 @@ post_init.datacamp <- function(e) {
                  content = list(current_row = e$row,
                                 total_rows = nrow(e$les),
                                 history = if(e$row > 1) html_list(as.list(e$les[1:(e$row-1) , "Output"])) else list()))
-  print(packet)
   post(packet)
 }
 
