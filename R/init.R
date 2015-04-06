@@ -16,5 +16,7 @@ install_course_from_s3 <- function() {
   url <- paste0(bucket_url, gsub(" ", "_", getOption("course")),".zip")
   suppressWarnings(dir.create("~/.datacamp"))
   suppressWarnings(dir.create("~/.datacamp/Courses"))
-  install_course_url(url, coursesDir = "~/.datacamp/Courses")
+  # set coursesDir
+  set_swirl_options(courses_dir = "~/.datacamp/Courses")
+  install_course_url(url)
 }
