@@ -8,9 +8,9 @@ Author: Filip Schouwenaars <filip@datacamp.com>
 Maintainer: Filip Schouwenaars <filip@datacamp.com>
 Description: swirl turns the R console into an interactive learning
     environment. Users receive immediate feedback as they are guided through
-    self-paced lessons in data science and R programming. This package is a fork
-    of the swirl package, to work well in the DataCamp environment.
-License: In house use for the moment only
+    self-paced lessons in data science and R programming. This package is a wrapper
+    around the swirl package, to work well in the DataCamp environment.
+License: To be used in DataCamp's RStudio Interface only
 Depends:
   swirl
 Imports:
