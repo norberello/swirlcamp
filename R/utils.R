@@ -10,3 +10,5 @@ html_list <- function(mes_list) {
 }
 
 override_msg <- "You can not use swirl's %s() function in the DataCamp interface."
+
+# file.copy("init.yaml", ".init.yaml")

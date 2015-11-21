@@ -2,7 +2,7 @@ Package: swirlcamp
 Type: Package
 Title: Learn in R, in R, on DataCamp
 URL: http://www.datacamp.com
-Version: 1.0
+Version: 0.1.0
 Date: 2015-03-09
 Author: Filip Schouwenaars <filip@datacamp.com>
 Maintainer: Filip Schouwenaars <filip@datacamp.com>
@@ -17,4 +17,5 @@ Imports:
   yaml,
   markdown,
   RJSONIO,
-  stringr
+  stringr,
+  httr
