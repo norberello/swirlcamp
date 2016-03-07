@@ -7,9 +7,9 @@
 swirl(init_filename = ".init.yaml", install = TRUE)
 }
 \arguments{
-\item{install}{logical value, whether or not to install course before starting swirl. Defaults to TRUE}
+\item{init_filename}{yaml file containing initialization information. If not specified, defulats to .init.yaml}
 
-\item{init_yaml}{yaml file containing initialization information. If not specified, defulats to .init.yaml}
+\item{install}{logical value, whether or not to install course before starting swirl. Defaults to TRUE}
 }
 \description{
 TESTING COURSES: cp -R ~/courses/swirl_courses/R_Programming ~/.datacamp/Courses/

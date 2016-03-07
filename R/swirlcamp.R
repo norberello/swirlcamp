@@ -5,7 +5,7 @@
 #' UPLOADING ZIP TO S3: 
 #' s3cmd put --acl-public ~/courses/swirl_courses/R_Programming.zip s3://assets.datacamp.com/course/swirl/
 #' 
-#' @param init_yaml yaml file containing initialization information. If not specified, defulats to .init.yaml
+#' @param init_filename yaml file containing initialization information. If not specified, defulats to .init.yaml
 #' @param install logical value, whether or not to install course before starting swirl. Defaults to TRUE
 #' 
 #' @export

@@ -16,7 +16,7 @@ Depends:
 Imports:
     yaml,
     markdown,
-    swirl,
+    rjson,
     stringr,
     httr
 RoxygenNote: 5.0.1
