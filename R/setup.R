@@ -1,14 +1,14 @@
 #' @export
 args_specification.datacamp <- function(e, ...) {
-  if(is.null(getOption("course")) || is.null(getOption("lesson"))) {
+  if(is.null(sc$get("course")) || is.null(sc$get("lesson"))) {
     stop("Must specify 'course' and 'lesson' in the options!")
   }
-  e$course <- getOption("course")
-  e$lesson <- getOption("lesson")
-  if(is.null(getOption("from"))) {
+  e$course <- sc$get("course")
+  e$lesson <- sc$get("lesson")
+  if(is.null(sc$get("from"))) {
     e$test_from <- 1
   } else {
-    e$test_from <- getOption("from")
+    e$test_from <- sc$get("from")
   }
   e$test_to <- 999
 }

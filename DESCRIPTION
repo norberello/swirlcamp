@@ -6,16 +6,17 @@ Version: 0.1.0
 Date: 2015-03-09
 Author: Filip Schouwenaars <filip@datacamp.com>
 Maintainer: Filip Schouwenaars <filip@datacamp.com>
-Description: swirl turns the R console into an interactive learning
-    environment. Users receive immediate feedback as they are guided through
-    self-paced lessons in data science and R programming. This package is a wrapper
-    around the swirl package, to work well in the DataCamp environment.
+Description: swirl turns the R console into an interactive learning environment.
+    Users receive immediate feedback as they are guided through self-paced lessons
+    in data science and R programming. This package is a wrapper around the swirl
+    package, to work well in the DataCamp environment.
 License: To be used in DataCamp's RStudio Interface only
 Depends:
-  swirl
+    swirl
 Imports:
-  yaml,
-  markdown,
-  RJSONIO,
-  stringr,
-  httr
+    yaml,
+    markdown,
+    swirl,
+    stringr,
+    httr
+RoxygenNote: 5.0.1

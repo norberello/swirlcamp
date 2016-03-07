@@ -93,11 +93,11 @@ post_finished.datacamp <- function(e) {
 
 #' Generic function that posts a packet of information to the DataCamp pusher.
 #' @importFrom httr POST add_headers
-#' @importFrom RJSONIO toJSON
+#' @importFrom rjson toJSON
 post <- function(packet) {
   # print(packet)
   url <- "http://pusher.datacamp.com/exercises"
-  json <- RJSONIO::toJSON(c(packet, user_id = getOption("user_id")))
+  json <- toJSON(c(packet, user_id = sc$get("user_id")))
   result <- try(POST(url = url, 
                      body = json, 
                      add_headers(c(`Content-Type` = "application/json", 
