@@ -12,10 +12,6 @@ swirl(init_filename = ".init.yaml", install = TRUE)
 \item{install}{logical value, whether or not to install course before starting swirl. Defaults to TRUE}
 }
 \description{
-TESTING COURSES: cp -R ~/courses/swirl_courses/R_Programming ~/.datacamp/Courses/
-}
-\details{
-UPLOADING ZIP TO S3: 
-s3cmd put --acl-public ~/courses/swirl_courses/R_Programming.zip s3://assets.datacamp.com/course/swirl/
+Start the DataCamp version of Swirl
 }
 
