@@ -28,7 +28,7 @@ install_course_from_s3 <- function() {
 #' @importFrom httr GET content
 install_course_from_github <- function() {
   message("Getting swirl lesson from github ... ", appendLF = FALSE)
-  api_url <- "http://api.github.com/repos/datacamp/swirl_courses/contents/%s/%s"
+  api_url <- "https://api.github.com/repos/datacamp/swirl_courses/contents/%s/%s"
   underscored_course <- gsub(" ", "_", sc$get("course"))
   underscored_lesson <- gsub(" ", "_", sc$get("lesson"))
   
