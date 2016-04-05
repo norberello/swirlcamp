@@ -27,7 +27,7 @@ install_course_from_s3 <- function() {
 
 #' @importFrom httr GET content
 install_course_from_github <- function() {
-  message("Getting swirl lesson from github ... ", appendLF = FALSE)
+  message("Just a moment... ", appendLF = FALSE)
   api_url <- "https://api.github.com/repos/datacamp/swirl_courses/contents/%s/%s"
   underscored_course <- gsub(" ", "_", sc$get("course"))
   underscored_lesson <- gsub(" ", "_", sc$get("lesson"))
@@ -39,11 +39,12 @@ install_course_from_github <- function() {
   suppressWarnings(dir.create(sprintf("~/.datacamp/Courses/%s/%s", underscored_course, underscored_lesson)))                 
   
   lesson_contents <- content(GET(sprintf(api_url, underscored_course, underscored_lesson)))
-  lapply(lesson_contents, function(x) download.file(x$download_url, 
-                                                    destfile = sprintf("~/.datacamp/Courses/%s/%s/%s", 
-                                                                       underscored_course, underscored_lesson, basename(x$download_url)), 
-                                                    quiet = TRUE))
+  lapply(lesson_contents, function(x) {
+    library(httr)
+    GET(x$download_url, write_disk(sprintf("~/.datacamp/Courses/%s/%s/%s", 
+                                underscored_course, underscored_lesson, basename(x$download_url)), overwrite = TRUE))
+  })
   
   suppressMessages(options(swirl_courses_dir = "~/.datacamp/Courses"))
-  message("Done!")
+  message("All set!")
 }
