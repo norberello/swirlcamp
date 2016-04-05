@@ -17,6 +17,14 @@ install_course_from_swc <- function() {
   message("Done!")
 }
 
+install_course_from_s3 <- function() {
+  bucket_url = "http://s3.amazonaws.com/assets.datacamp.com/course/swirl/"
+  url <- paste0(bucket_url, gsub(" ", "_", getOption("course")), ".zip")
+  suppressWarnings(dir.create("~/.datacamp"))
+  suppressWarnings(dir.create("~/.datacamp/Courses"))
+  install_course_url(url, coursesDir = "~/.datacamp/Courses")
+}
+
 #' @importFrom httr GET content
 install_course_from_github <- function() {
   message("Getting swirl lesson from github ... ", appendLF = FALSE)
