@@ -18,11 +18,12 @@ install_course_from_swc <- function() {
 }
 
 install_course_from_s3 <- function() {
-  bucket_url = "http://s3.amazonaws.com/assets.datacamp.com/course/swirl/"
+  bucket_url = "http://s3.amazonaws.com/assets.datacamp.com/course/swirl_zip/"
   url <- paste0(bucket_url, gsub(" ", "_", sc$get("course")), ".zip")
   suppressWarnings(dir.create("~/.datacamp"))
   suppressWarnings(dir.create("~/.datacamp/Courses"))
-  install_course_url(url, coursesDir = "~/.datacamp/Courses")
+  suppressMessages(options(swirl_courses_dir = "~/.datacamp/Courses"))
+  install_course_url(url)
 }
 
 #' @importFrom httr GET content

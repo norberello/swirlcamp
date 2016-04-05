@@ -9,7 +9,7 @@ swirl <- function(init_filename = ".init.yaml", install = TRUE) {
     message("You can only use the swirl() command at the start of this exercise.")
   } else {
     initialize_options(init_filename)
-    if (install) install_course_from_github()
+    if (install) install_course_from_s3()
     swirl::swirl("datacamp")  
   }
 }
