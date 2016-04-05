@@ -19,7 +19,7 @@ install_course_from_swc <- function() {
 
 install_course_from_s3 <- function() {
   bucket_url = "http://s3.amazonaws.com/assets.datacamp.com/course/swirl/"
-  url <- paste0(bucket_url, gsub(" ", "_", getOption("course")), ".zip")
+  url <- paste0(bucket_url, gsub(" ", "_", sc$get("course")), ".zip")
   suppressWarnings(dir.create("~/.datacamp"))
   suppressWarnings(dir.create("~/.datacamp/Courses"))
   install_course_url(url, coursesDir = "~/.datacamp/Courses")
@@ -29,8 +29,8 @@ install_course_from_s3 <- function() {
 install_course_from_github <- function() {
   message("Getting swirl lesson from github ... ", appendLF = FALSE)
   api_url <- "https://api.github.com/repos/datacamp/swirl_courses/contents/%s/%s"
-  underscored_course <- gsub(" ", "_", getOption("course"))
-  underscored_lesson <- gsub(" ", "_", getOption("lesson"))
+  underscored_course <- gsub(" ", "_", sc$get("course"))
+  underscored_lesson <- gsub(" ", "_", sc$get("lesson"))
   
   # Build the course folder structure
   suppressWarnings(dir.create("~/.datacamp"))
