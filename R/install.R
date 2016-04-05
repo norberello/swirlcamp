@@ -23,7 +23,7 @@ install_course_from_s3 <- function() {
   suppressWarnings(dir.create("~/.datacamp"))
   suppressWarnings(dir.create("~/.datacamp/Courses"))
   suppressMessages(options(swirl_courses_dir = "~/.datacamp/Courses"))
-  install_course_url(url)
+  capture.output(install_course_url(url))
 }
 
 #' @importFrom httr GET content
