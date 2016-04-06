@@ -18,7 +18,7 @@ install_course_from_swc <- function() {
 }
 
 install_course_from_s3 <- function() {
-  bucket_url = "http://s3.amazonaws.com/assets.datacamp.com/course/swirl_zip/"
+  bucket_url <- "http://s3.amazonaws.com/assets.datacamp.com/course/swirl/"
   url <- paste0(bucket_url, gsub(" ", "_", sc$get("course")), ".zip")
   suppressWarnings(dir.create("~/.datacamp"))
   suppressWarnings(dir.create("~/.datacamp/Courses"))
